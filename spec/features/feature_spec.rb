@@ -15,7 +15,6 @@ feature 'bookmarks page' do
 
    scenario 'shows bookmarks' do
     visit '/bookmarks'
-    expect(page).to have_content("http://endless.horse/")
+    expect(page).to have_content("http://www.makersacademy.com")
   end
 end
-
