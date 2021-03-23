@@ -1,4 +1,5 @@
 require './app.rb'
+require 'spec_helper'
 
 feature 'index page' do
   scenario 'index page exists' do
@@ -15,6 +16,7 @@ feature 'bookmarks page' do
 
    scenario 'shows bookmarks' do
     visit '/bookmarks'
+    setup_test_database!
     expect(page).to have_content("http://www.makersacademy.com")
   end
 end
