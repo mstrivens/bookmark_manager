@@ -1,5 +1,4 @@
 require 'pg'
-require 'multiple_rows'
 
 class Bookmarks
 
@@ -9,10 +8,10 @@ class Bookmarks
 # 	rs = con.exec "SELECT * FROM bookmarks"
 
 	def self.all
-		connect = PG.connect :dbname => 'bookmark_manager', :user => 'loureade'
+		connect = PG.connect :dbname => 'bookmark_manager', :user => 'maxstrivens'
 
 		result = connect.exec "SELECT * FROM bookmarks"
 
-		result.map { |bookmark| bookmark['url'] }
+		result.map {|bookmark| "#{bookmark['url']}"}
 	end
 end

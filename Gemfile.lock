@@ -75,6 +75,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   pg
+  rack
   rspec
   rubocop (= 0.79.0)
   sinatra
