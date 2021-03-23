@@ -34,5 +34,6 @@ Run the query we have saved in the file 01_create_bookmarks_table.sql
 - RSpec tests all passing
 - Using test database to clear and populate bookmarks test table
 - Database showing as an array on /bookmarks page
+- Took out user for database so it works across different computers
 
 - Next challenge is number 10 - Creating bookmarks
