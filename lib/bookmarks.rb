@@ -9,15 +9,13 @@ class Bookmarks
 
 	def self.all
 
-		if ENV['CONNECT'] == 'test'
-			PG.connect :dbname => 'bookmark_manager_test', :user => 'loureade'
-
+		if ENV['ENVIRONMENT'] == 'test'
+			connect = PG.connect :dbname => 'bookmark_manager_test'
 		else
+			connect = PG.connect :dbname => 'bookmark_manager'
+		end
 
-		connect = PG.connect :dbname => 'bookmark_manager', :user => 'loureade'
-	end
 		result = connect.exec "SELECT * FROM bookmarks"
-
 		result.map {|bookmark| "#{bookmark['url']}"}
 
 	end

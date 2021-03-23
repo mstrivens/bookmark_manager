@@ -14,9 +14,7 @@ feature 'bookmarks page' do
     expect(page).to have_content("Bookmarks:")
   end
 
-   scenario 'shows bookmarks' do
-    visit '/bookmarks'
-    setup_test_database!
-    expect(page).to have_content("http://www.makersacademy.com")
+  scenario 'shows bookmarks' do
+    clear_and_pop_db
   end
 end
