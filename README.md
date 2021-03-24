@@ -10,7 +10,21 @@ I would like to see a list of bookmarks
 | bookmarks | @website  | list     |
 |           |           |          |
 
+As a user
+So that I can add a new website
+I would like to add a bookmark
 
+| class     | responsibilities | colabs   |
+|-----------|------------------|----------|
+|           |                  |          |
+| bookmarks | add-bookmark     |          |
+|           |                  |          |
+
+- post request to app
+- app adds new bookmark to database
+- database return updated table
+- app reuqests feedback from views
+- views send updated list/message
 
 ### To set up the database
 Connect to psql
