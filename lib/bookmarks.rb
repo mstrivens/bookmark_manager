@@ -22,10 +22,10 @@ class Bookmarks
 		if ENV['ENVIRONMENT'] == 'test'
 			connection = PG.connect(dbname: 'bookmark_manager_test')
 		else
-			connect = PG.connect :dbname => 'bookmark_manager'
+			connection = PG.connect :dbname => 'bookmark_manager'
 		end
 
-		connection.exec("INSERT INTO bookmarks(url) VALUES('#{url}');")
+		connection.exec("INSERT INTO bookmarks (url) VALUES('#{url}');")
 
 	end
 end
