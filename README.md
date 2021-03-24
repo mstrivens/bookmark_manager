@@ -45,10 +45,9 @@ Run the query we have saved in the file 01_create_bookmarks_table.sql
 
 ## Current project status
 
-- RSpec tests all passing
-- Using test database to clear and populate bookmarks test table
-- Database showing as an array on /bookmarks page
-- Took out user for database so it works across different computers
-- Shout out to Joe Pasquale
-
-- Next challenge is number 10 - Creating bookmarks
+- 2 RSPEC tests failing due to the bookmarks only diplaying the url
+- could change the result.map in bookmarks.all to display the title but would need to change tests
+- Also need to look at initializing :id and :url
+- Also need to href the url to make it a clickable link
+- Go back overstep 10 walkthrouh and implement missing features
+- Go through step 11 walkthrough and implement missing features
