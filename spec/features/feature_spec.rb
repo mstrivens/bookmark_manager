@@ -24,6 +24,12 @@ feature 'add new bookmark' do
     visit  ('/')
     expect(page).to have_field ('new_bookmark')
   end
+  scenario 'see new bookmark on /new_bookmark page' do
+    visit  ('/')
+    fill_in 'new_bookmark', with: 'https://http.cat'
+    click_on 'New bookmark'
+    expect(page).to have_content('https://http.cat')
+  end
 end
 
 feature 'shows bookmarks' do
