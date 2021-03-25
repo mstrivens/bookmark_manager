@@ -1,11 +1,13 @@
 require 'pg'
 
 class Bookmarks
-
-# begin
-#
-# 	con = PG.connect :dbname => 'bookmark_manager', :user => 'maxstrivens'
-# 	rs = con.exec "SELECT * FROM bookmarks"
+	# attr_reader :id, :title, :url
+	#
+	# def initialize(id:, title:, url:)
+	# 	@id = id
+	# 	@title = title
+	# 	@url = url
+	# end
 
 	def self.all
 		if ENV['ENVIRONMENT'] == 'test'
@@ -13,10 +15,8 @@ class Bookmarks
 		else
 			connect = PG.connect :dbname => 'bookmark_manager'
 		end
-
 		result = connect.exec "SELECT * FROM bookmarks"
 		result.map {|bookmark| "#{bookmark['url']}"}
-		
 	end
 
 	def self.add(url, title)
@@ -25,8 +25,6 @@ class Bookmarks
 		else
 			connection = PG.connect :dbname => 'bookmark_manager'
 		end
-
 		connection.exec("INSERT INTO bookmarks (url, title) VALUES('#{url}', '#{title}');")
-
 	end
 end
